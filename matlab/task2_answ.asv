@@ -1,0 +1,9 @@
+fileRoot = fopen("../matrices/root.matr", "rt");
+fileRoots = fopen("../matrices/d_matrices.matrs", "rt");
+x = fscanf(fileRoot, "%f", [MATRIX_SIZE 1]);
+roots = fscanf(fileRoots, "%f", [MATRIX_SIZE MATRIX_SIZE]);
+fclose(fileRoot);
+fclose(fileRoots);
+
+roots = transpose(roots);
+
