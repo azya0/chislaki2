@@ -215,23 +215,5 @@ int main() {
     file.close();
     Bfile.close();
 
-    auto L = Matrix({
-        {10, 7, 5, 2},
-        {7, 13, 11, 6},
-        {5, 11, 19, 13},
-        {2, 6, 13, 17}
-    });
-
-    double b[4] = {4, 5, 6, 7};
-
-    auto y = solve(L.decompose(), b);
-
-    auto x = solveT(L.decompose().transpose(), b);
-
-    for (int index = 0; index < 4; index++) {
-        std::cout << x[index] << ' ';
-    }
-    std::cout << std::endl;
-
     return 0;
 }

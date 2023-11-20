@@ -25,16 +25,15 @@ for i = E_MIN:E_MAX
 
     % Проверка выполнения неравенства
     db = 2 * (0.5 - rand(MATRIX_SIZE,1)) .* b;
-    condNum = norm(A) * norm(inv(A));
-    if ~(norm1(i) / norm(roots(:, i)) <= condNum * norm(db) * norm(b))
+    if ~(norm1(i) / norm(roots(:, i)) <= cond(A) * norm(db) / norm(b))
         inequalityTrue = false;
     end
 end
 
 if inequalityTrue
-    fprintf("Неравество выполняется!\n");
+    fprintf("Выполняется.\n");
 else
-    fprintf("Неравенство не выполняется!\n");
+    fprintf("Не выполняется.\n");
 end
 
 % Вывод норм на экран
